@@ -1,0 +1,256 @@
+@font-face {
+    font-family: "courier new";
+    font-weight: 100;
+    src: url(./fonts/cour.woff);
+}
+
+@font-face {
+    font-family: "courier new";
+    font-weight: 900;
+    src: url(./fonts/courbd.woff);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+}
+
+#main {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#n_note {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    bottom: 100%;
+    left: 100%;
+    width: 100vw;
+    height: 100vh;
+    backdrop-filter: blur(5px);
+    z-index: 10;
+    transition: all linear .6s;
+}
+
+#new_note {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 250px;
+    height: 250px;
+    padding: 8px 6px;
+    border: 1px solid grey;
+    background-color: rgb(240, 234, 226);
+    box-shadow: 0 0 10px 2px rgb(182, 182, 199) inset;
+    border-radius: 4px;
+}
+
+#note_top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+#title {
+    width: 100%;
+    font-size: 15px;
+    font-weight: 900;
+    padding: 4px 6px;
+    margin-bottom: 4px;
+}
+
+#theme {
+    font-size: 12px;
+}
+
+#body {
+    width: 100%;
+    height: 100%;
+    resize: none;
+    word-wrap: normal;
+    font-size: 14px;
+    padding: 4px 6px;
+    margin-top: 4px;
+}
+
+#opt {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 4px;
+}
+
+#save,
+#update {
+    padding: 3px 6px;
+}
+
+#back {
+    width: 100vw;
+    height: 100vh;
+    background-color: antiquewhite;
+}
+
+#nav {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 50px;
+    width: 100%;
+    height: 10vh;
+    background-color: aqua;
+}
+
+#add {
+    position: absolute;
+    right: 20px;
+    padding: 8px 20px;
+    border-radius: 8px;
+    border: 1px solid black;
+    background-color: aquamarine;
+}
+
+#mb {
+    width: 100%;
+    height: 90%;
+    padding: 30px 40px;
+    background-color: blanchedalmond;
+}
+
+#mainbody {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+.trick {
+    display: flex;
+    flex-direction: column;
+    width: 33%;
+}
+
+.card,
+#card {
+    position: relative;
+    width: 100%;
+    min-height: 120px;
+    max-height: 300px;
+    border-radius: 6px;
+    overflow: hidden;
+    font-family: "courier new";
+    border: 1px solid grey;
+    margin-bottom: 6px;
+}
+
+#card {
+    display: initial;
+    min-width: 40%;
+    max-width: 60%;
+    background-color: rgb(181, 223, 243);
+    overflow: calc();
+    resize: both;
+    box-shadow: 0 0 10px 2px rgb(143, 175, 190) inset;
+}
+
+#card>i,
+#new_note>i {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 100%;
+    left: 100%;
+    padding: 2px;
+    transform: translate(-100%, 100%);
+    color: rgb(0, 0, 0);
+    border: 1px solid rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    border-radius: 50%;
+}
+
+#new_note>i {
+    transform: translate(-50%, 50%);
+}
+
+.overlay {
+    opacity: 0;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: flex-end;
+    gap: 8px;
+    padding: 6px;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    backdrop-filter: blur(2px);
+    background-color: rgba(192, 192, 192, 0.349);
+    transition: all cubic-bezier(0.19, 1, 0.22, 1) .5s;
+}
+
+.overlay:hover {
+    opacity: 1;
+}
+
+.overlay>button {
+    pointer-events: initial;
+}
+
+.crdtitl,
+#crdtitl {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 36px;
+    border-bottom: 1px solid rgb(202, 202, 202);
+    box-shadow: 0px 1px 10px rgb(207, 197, 197);
+}
+
+.crdtitl h4,
+#crdtitl h4 {
+    font-size: 22px;
+}
+
+.crdbody,
+#crdbody {
+    width: 100%;
+    height: calc(100% - 36px);
+    overflow-x: scroll;
+}
+
+.crdbody p,
+#crdbody p {
+    padding: 14px 10px;
+    text-align: center;
+}
+
+@media (max-width:500px) {
+    #mb {
+        padding: 10px 16px;
+    }
+}
